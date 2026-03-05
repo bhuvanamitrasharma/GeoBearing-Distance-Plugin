@@ -12,7 +12,7 @@ Key features include:
 * Seamless integration: Works with standard QGIS snapping and digitizing workflows.
 * Advanced CAD capabilities: Ideal for survey-grade plotting and geometric construction. 
 
-repository= 
-category=Vector 
-icon=icon.png
+repository=https://github.com/bhuvanamitrasharma/QGIS-Distance-Bearing-Tool
+category=Vector
+
 tags = aviation, bearing, distance, geodesic, true north, navigation
