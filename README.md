@@ -21,7 +21,7 @@ Standard digitizing tools often rely on Grid-based calculations limited by the p
 2. **Select Tool:** Click the **GeoBearing-Distance** icon in the digitizing toolbar.
 3. **Set Origin:** Click on the map to place your first vertex.
 4. **Input Data:** 
-   - Enter values manually in the **Bearing CAD Controls** dock and click **Add Point**.
+   - Enter values manually in the **GeoBearing-Distance Controls** dock and click **Add Point**.
    - Use the **Lock** checkboxes to constrain the mouse movement to a specific bearing or distance.
 5. **Finalize:** Right-click or select **Finish** to commit the feature geometry.
 
@@ -33,3 +33,4 @@ Standard digitizing tools often rely on Grid-based calculations limited by the p
 ---
 
 *Developed by Bhuvanamitra S*
+
