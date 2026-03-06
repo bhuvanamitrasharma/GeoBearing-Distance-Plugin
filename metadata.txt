@@ -1,18 +1,17 @@
 [general]
-name=Distance Bearing Tool
+name=GeoBearing-Distance
 qgisMinimumVersion=3.0
 description=Feature Digitzing Tool using ellipsoidal bearing and distance inputs.
 version=1.0.0
 author=Bhuvanamitra S
 email=bhuvanamitrasharma@gmail.com
-about=Enhance your workflow with this high-precision digitizing tool. A perfect complement to the native Advanced Digitizing Panel, this plugin allows you to create lines and polygons based on ellipsoidal bearing and distance inputs.
+about=Enhance your workflow with this high-precision digitizing tool. A perfect complement to the native Advanced Digitizing Tool, this plugin allows you to create lines and polygons based on ellipsoidal bearing and distance inputs.
 
 Key features include:
 * Ellipsoidal accuracy: Calculations remain precise regardless of your map canvas CRS.
 * Seamless integration: Works with standard QGIS snapping and digitizing workflows.
-* Advanced CAD capabilities: Ideal for survey-grade plotting and geometric construction. 
 
-repository=https://github.com/bhuvanamitrasharma/QGIS-Distance-Bearing-Tool
-category=Vector
-
-tags = aviation, bearing, distance, geodesic, true north, navigation
+repository= 
+category=Vector 
+icon=icon.png
+tags = aviation, bearing, distance, geodesic, true north, navigation, lines, polygons

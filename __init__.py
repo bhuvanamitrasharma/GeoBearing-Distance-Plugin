@@ -1,3 +1,3 @@
 def classFactory(iface):
-    from .distance_bearing_plugin import DistanceBearingPlugin
-    return DistanceBearingPlugin(iface)
+    from .distance_bearing_plugin import GeoBearingDistancePlugin
+    return GeoBearingDistancePlugin(iface)

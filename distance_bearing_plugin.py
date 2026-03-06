@@ -37,8 +37,8 @@ class BearingDockWidget(QgsDockWidget):
     closingWidget = pyqtSignal()
 
     def __init__(self, parent=None):
-        super().__init__("Bearing CAD Controls", parent)
-        self.setObjectName("BearingCADDock")
+        super().__init__("GeoBearing-Distance", parent)
+        self.setObjectName("GeoBearing-DistanceDock")
         self.setAllowedAreas(Qt.LeftDockWidgetArea | Qt.RightDockWidgetArea)
 
         # Main Layout
@@ -46,7 +46,7 @@ class BearingDockWidget(QgsDockWidget):
         self.layout = QVBoxLayout(self.main_widget)
 
         # Header
-        header = QLabel("<b>Bearing CAD Controls</b>")
+        header = QLabel("<b>GeoBearing-Distance Controls</b>")
         self.layout.addWidget(header)
 
         # --- Bearing Input ---
@@ -126,7 +126,7 @@ class BearingCADTool(QgsMapToolEmitPoint):
         self._last_ellipsoid = None
         self.setup_da()
         
-        QgsMessageLog.logMessage("Distance Bearing Tool (Geodesic v2) Initialized", "Bearing Tool", Qgis.Info)
+        QgsMessageLog.logMessage("GeoBearing-Distance (Geodesic v2) Initialized", "GeoBearing-Distance", Qgis.Info)
 
         # Sync with Native CAD panel
         self.cad_dock = iface.cadDockWidget()
@@ -245,7 +245,7 @@ class BearingCADTool(QgsMapToolEmitPoint):
         """Triggered from 'Add Point' button using UI values"""
         if not self.vertices:
             # First point must be a click or we use 0,0 (not useful)
-            iface.messageBar().pushMessage("Bearing Tool", "Place the first point on canvas first.", Qgis.Warning)
+            iface.messageBar().pushMessage("GeoBearing-Distance", "Place the first point on canvas first.", Qgis.Warning)
             return
             
         # Calculate next point from last vertex + UI Bearing/Dist
@@ -434,7 +434,7 @@ class BearingCADTool(QgsMapToolEmitPoint):
 
         elif layer.geometryType() == QgsWkbTypes.PolygonGeometry:
             if len(layer_pts) < 3:
-                iface.messageBar().pushWarning("Bearing Tool", "Polygon needs at least 3 vertices.")
+                iface.messageBar().pushWarning("GeoBearing-Distance", "Polygon needs at least 3 vertices.")
                 self.reset_tool()
                 return
                 
@@ -464,8 +464,8 @@ class BearingCADTool(QgsMapToolEmitPoint):
         self.rubber_band.reset()
         iface.mainWindow().statusBar().clearMessage()
 
-class DistanceBearingPlugin:
-    """Main Plugin class for Distance Bearing Tool"""
+class GeoBearingDistancePlugin:
+    """Main Plugin class for GeoBearing-Distance"""
     def __init__(self, iface):
         self.iface = iface
         self.canvas = iface.mapCanvas()
@@ -488,8 +488,8 @@ class DistanceBearingPlugin:
         icon_path = os.path.join(os.path.dirname(__file__), 'icon.png')
         icon = QIcon(icon_path) if os.path.exists(icon_path) else QIcon()
         
-        self.action = QAction(icon, "Switch to Distance Bearing Tool", self.iface.mainWindow())
-        self.action.setToolTip("Switch the current feature creation to high-precision Bearing Tool")
+        self.action = QAction(icon, "Switch to GeoBearing-Distance", self.iface.mainWindow())
+        self.action.setToolTip("Switch the current feature creation to high-precision GeoBearing-Distance")
         self.action.setCheckable(True)
         self.action.setEnabled(False)
         self.action.triggered.connect(self.toggle_bearing_mode)
