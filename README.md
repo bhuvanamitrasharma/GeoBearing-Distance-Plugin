@@ -1,6 +1,6 @@
-# GeoBearing-Distance
+# GeoBearing-Distance Plugin for QGIS
 
-The **GeoBearing-Distance** is a precision digitizing tool designed for creating features via ellipsoidal distance and bearing. It serves as a perfect complement to the native **Advanced Digitizing Panel**, allowing for the creation of geometric features based on exact geographic inputs.
+The **GeoBearing-Distance** is a precision digitizing tool designed for creating features in QGIS via ellipsoidal distance and bearing. It serves as a perfect complement to the native **Advanced Digitizing Panel**, allowing for the creation of geometric features based on exact geographic inputs.
 
 > [!IMPORTANT]
 > This tool is specifically designed for creating **Line** and **Polygon** features. It does not support point feature creation at this time.
@@ -31,4 +31,5 @@ Standard digitizing tools often rely on Grid-based calculations limited by the p
 * **Compatibility:** QGIS 3.0+.
 
 ---
+
 *Developed by Bhuvanamitra S*
