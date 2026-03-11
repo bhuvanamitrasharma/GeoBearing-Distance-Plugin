@@ -13,7 +13,7 @@ about=GeoBearing-Distance enhances the QGIS digitizing workflow by allowing
     precise feature creation using ellipsoidal bearing and distance inputs.
     It is particularly useful in aviation, surveying, and geospatial
     engineering workflows where true ellipsoidal measurements are required.
-version=1.0.0
+version=1.1
 tracker=https://github.com/bhuvanamitrasharma/GeoBearing-Distance-Plugin/issues
 repository=https://github.com/bhuvanamitrasharma/GeoBearing-Distance-Plugin
 
@@ -28,7 +28,7 @@ changelog=
     1.0.0 - Initial release of GeoBearing-Distance plugin.
             Added ellipsoidal bearing and distance based digitizing.
             Integrated snapping support with QGIS digitizing tools.
-    1.0.1 - QGIS 4 and Qt6 ready
+    1.1 - QGIS 4 and Qt6 ready
 
 tags=aviation, bearing, distance, geodesic, ellipsoidal, true north, navigation, digitizing, lines, polygons
 
