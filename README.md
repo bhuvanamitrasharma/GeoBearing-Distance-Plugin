@@ -1,12 +1,12 @@
-# GeoBearing-Distance Plugin for QGIS
+# GeoBearing-Distance
 
-The **GeoBearing-Distance** is a precision digitizing tool designed for creating features in QGIS via ellipsoidal distance and bearing. It serves as a perfect complement to the native **Advanced Digitizing Panel**, allowing for the creation of geometric features based on exact geographic inputs.
+The **GeoBearing-Distance** is a precision digitizing tool designed for creating features via ellipsoidal distance and bearing. It serves as a perfect complement to the native **Advanced Digitizing Panel**, allowing for the creation of geometric features based on exact geographic inputs.
 
 > [!IMPORTANT]
 > This tool is specifically designed for creating **Line** and **Polygon** features. It does not support point feature creation at this time.
 
 ## ✈️ Why Use This Tool?
-Standard digitizing tools often rely on Grid-based calculations limited by the project's CRS. This tool utilizes **ellipsoidal accuracy**, ensuring that calculations remain precise regardless of your map canvas CRS. This makes it an essential utility for **aviation**, navigation, and survey-grade plotting where True North and geodesic distances are required.
+Standard digitizing tools often rely on Grid-based calculations limited by the project's CRS. This tool utilizes **ellipsoidal accuracy**, ensuring that calculations remain precise regardless of your map canvas CRS. This makes it an essential utility for aviation, navigation, and survey-grade plotting where True North and geodesic distances are required.
 
 ## 🌟 Key Features
 * **Ellipsoidal Accuracy:** Calculations remain precise regardless of your map canvas CRS.
@@ -21,16 +21,14 @@ Standard digitizing tools often rely on Grid-based calculations limited by the p
 2. **Select Tool:** Click the **GeoBearing-Distance** icon in the digitizing toolbar.
 3. **Set Origin:** Click on the map to place your first vertex.
 4. **Input Data:** 
-   - Enter values manually in the **GeoBearing-Distance Controls** dock and click **Add Point**.
+   - Enter values manually in the **Bearing CAD Controls** dock and click **Add Point**.
    - Use the **Lock** checkboxes to constrain the mouse movement to a specific bearing or distance.
 5. **Finalize:** Right-click or select **Finish** to commit the feature geometry.
 
 ## 📋 Technical Details
 * **Calculation Basis:** WGS84 Ellipsoid (Geodesic).
 * **Bearing Reference:** 0° to 360° (True North).
-* **Compatibility:** QGIS 3.0+.
+* **Compatibility:** QGIS 3.0+ and QGIS 4 ready
 
 ---
-
-*Developed by Bhuvanamitra S*
-
+*Developed by Bhuvanamitra S* | *Logo Credits : ark Arjun*

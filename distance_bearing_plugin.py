@@ -1,12 +1,17 @@
 import math
 import os
+
+# Dual compatibility for SIP (PyQt5 and PyQt6)
 try:
     import sip
 except ImportError:
     try:
-        from PyQt5 import sip
+        from PyQt6 import sip
     except ImportError:
-        sip = None
+        try:
+            from PyQt5 import sip
+        except ImportError:
+            sip = None
 
 from qgis.gui import QgsMapToolEmitPoint, QgsRubberBand, QgsSnapIndicator, QgsDockWidget, QgsAdvancedDigitizingDockWidget
 from qgis.core import (
@@ -20,9 +25,29 @@ from qgis.PyQt.QtCore import Qt, QTimer, pyqtSignal, QSize
 from qgis.PyQt.QtWidgets import (
     QInputDialog, QDialog, QFormLayout, QDoubleSpinBox, 
     QDialogButtonBox, QVBoxLayout, QDockWidget, QWidget,
-    QCheckBox, QPushButton, QLabel, QHBoxLayout, QAction
+    QCheckBox, QPushButton, QLabel, QHBoxLayout
 )
 from qgis.PyQt.QtGui import QColor, QIcon
+
+# QAction moved from QtWidgets to QtGui in PyQt6
+try:
+    from qgis.PyQt.QtGui import QAction
+except ImportError:
+    from qgis.PyQt.QtWidgets import QAction
+
+# Helper for cross-version Enum access (Qt5 vs Qt6 strict namespaces)
+def get_qt_enum(qt_obj, enum_name, value_name):
+    """
+    Safely get Enum values across PyQt5 and PyQt6.
+    Example: get_qt_enum(Qt, 'AlignmentFlag', 'AlignCenter')
+    """
+    try:
+        # PyQt6 style: Qt.AlignmentFlag.AlignCenter
+        enum_obj = getattr(qt_obj, enum_name)
+        return getattr(enum_obj, value_name)
+    except (AttributeError, TypeError):
+        # PyQt5 style: Qt.AlignCenter
+        return getattr(qt_obj, value_name)
 
 def is_deleted(obj):
     """Safe check for deleted C++ objects"""
@@ -39,7 +64,7 @@ class BearingDockWidget(QgsDockWidget):
     def __init__(self, parent=None):
         super().__init__("GeoBearing-Distance", parent)
         self.setObjectName("GeoBearing-DistanceDock")
-        self.setAllowedAreas(Qt.LeftDockWidgetArea | Qt.RightDockWidgetArea)
+        self.setAllowedAreas(get_qt_enum(Qt, 'DockWidgetArea', 'LeftDockWidgetArea') | get_qt_enum(Qt, 'DockWidgetArea', 'RightDockWidgetArea'))
 
         # Main Layout
         self.main_widget = QWidget()
@@ -106,13 +131,13 @@ class BearingCADTool(QgsMapToolEmitPoint):
         self.snap_indicator = QgsSnapIndicator(canvas)
 
         self.rubber_band = QgsRubberBand(canvas, QgsWkbTypes.LineGeometry)
-        self.rubber_band.setColor(Qt.red)
+        self.rubber_band.setColor(get_qt_enum(Qt, 'GlobalColor', 'red'))
         self.rubber_band.setWidth(2)
-        color = QColor(Qt.red)
+        color = QColor(get_qt_enum(Qt, 'GlobalColor', 'red'))
         color.setAlpha(100)
         self.rubber_band.setFillColor(color)
 
-        self.setCursor(Qt.CrossCursor)
+        self.setCursor(get_qt_enum(Qt, 'CursorShape', 'CrossCursor'))
 
         self.live_bearing = 0.0
         self.live_dist = 0.0
@@ -225,7 +250,7 @@ class BearingCADTool(QgsMapToolEmitPoint):
     # ---------------- CLICK EVENTS ----------------
     def canvasReleaseEvent(self, e):
         if is_deleted(self.dock): return
-        if e.button() == Qt.RightButton:
+        if e.button() == get_qt_enum(Qt, 'MouseButton', 'RightButton'):
             e.accept()
             self.commit_geometry()
             return
@@ -478,7 +503,7 @@ class GeoBearingDistancePlugin:
     def initGui(self):
         # Create Dock Widget
         self.dock = BearingDockWidget(self.iface.mainWindow())
-        self.iface.addDockWidget(Qt.RightDockWidgetArea, self.dock)
+        self.iface.addDockWidget(get_qt_enum(Qt, 'DockWidgetArea', 'RightDockWidgetArea'), self.dock)
         self.dock.hide()
 
         # Create Map Tool

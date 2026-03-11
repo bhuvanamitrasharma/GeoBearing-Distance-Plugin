@@ -1,17 +1,45 @@
+; the next section is mandatory
+
 [general]
 name=GeoBearing-Distance
-qgisMinimumVersion=3.0
-description=Feature Digitzing Tool using ellipsoidal bearing and distance inputs.
-version=1.0.0
-author=Bhuvanamitra S
 email=bhuvanamitrasharma@gmail.com
-about=Enhance your workflow with this high-precision digitizing tool. A perfect complement to the native Advanced Digitizing Tool, this plugin allows you to create lines and polygons based on ellipsoidal bearing and distance inputs.
+author=Bhuvanamitra S
+qgisMinimumVersion=3.0
+description=Feature digitizing tool using ellipsoidal bearing and distance inputs.
+    This plugin complements the native Advanced Digitizing Tool in QGIS.
+    It allows users to create lines and polygons using precise
+    ellipsoidal bearing and distance values with snapping support.
+about=GeoBearing-Distance enhances the QGIS digitizing workflow by allowing
+    precise feature creation using ellipsoidal bearing and distance inputs.
+    It is particularly useful in aviation, surveying, and geospatial
+    engineering workflows where true ellipsoidal measurements are required.
+version=1.0.0
+tracker=https://github.com/bhuvanamitrasharma/GeoBearing-Distance-Plugin/issues
+repository=https://github.com/bhuvanamitrasharma/GeoBearing-Distance-Plugin
 
-Key features include:
-* Ellipsoidal accuracy: Calculations remain precise regardless of your map canvas CRS.
-* Seamless integration: Works with standard QGIS snapping and digitizing workflows.
+; end of mandatory metadata
 
-repository= 
-category=Vector 
+
+; start of optional metadata
+
+category=Vector
+
+changelog=
+    1.0.0 - Initial release of GeoBearing-Distance plugin.
+            Added ellipsoidal bearing and distance based digitizing.
+            Integrated snapping support with QGIS digitizing tools.
+    1.0.1 - QGIS 4 and Qt6 ready
+
+tags=aviation, bearing, distance, geodesic, ellipsoidal, true north, navigation, digitizing, lines, polygons
+
+homepage=https://github.com/bhuvanamitrasharma/GeoBearing-Distance-Plugin
+
 icon=icon.png
-tags = aviation, bearing, distance, geodesic, true north, navigation, lines, polygons
+
+experimental=False
+
+deprecated=False
+
+qgisMaximumVersion=4.99
+
+license=GPL-2.0-or-later
