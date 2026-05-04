@@ -17,6 +17,9 @@ Standard digitizing tools often rely on Grid-based calculations limited by the p
 * **Constraint Locking:** Ability to lock specific bearing or distance values for high-accuracy placement.
 
 ## 🛠 How It Works
+
+Watch the video here - [QGIS India Community Day - April 2026](https://www.youtube.com/watch?v=ID4sNJ4hfc0&t=2780s) (starts at 46:20). Credits to [QGIS India User Group](https://in.qgis.org/)
+
 1. **Enable Editing:** Toggle editing on a Line or Polygon vector layer.
 2. **Select Tool:** Click the **GeoBearing-Distance** icon in the digitizing toolbar.
 3. **Set Origin:** Click on the map to place your first vertex.
