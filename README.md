@@ -24,7 +24,7 @@ Watch the video here - [QGIS India Community Day - April 2026](https://www.youtu
 2. **Select Tool:** Click the **GeoBearing-Distance** icon in the digitizing toolbar.
 3. **Set Origin:** Click on the map to place your first vertex.
 4. **Input Data:** 
-   - Enter values manually in the **Bearing CAD Controls** dock and click **Add Point**.
+   - Enter values manually in the **Geo-Bearing Distance Controls** dock and click **Add Point**.
    - Use the **Lock** checkboxes to constrain the mouse movement to a specific bearing or distance.
 5. **Finalize:** Right-click or select **Finish** to commit the feature geometry.
 
@@ -34,4 +34,4 @@ Watch the video here - [QGIS India Community Day - April 2026](https://www.youtu
 * **Compatibility:** QGIS 3.0+ and QGIS 4 ready
 
 ---
-*Developed by Bhuvanamitra S* | *Logo Credits : ark Arjun*
+*Developed by Bhuvanamitra S* | *Logo Credits : ark Arjun* | *Knowledge Credits to Ujaval Gandhi - Spatial Thoughts and Nithin V Atale -  Aviation Consultant*
